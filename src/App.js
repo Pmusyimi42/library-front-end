@@ -1,13 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Signup from './components/signup';
-import Footer from './components/Footer/footer';
+
+import LandingPage from './components/LandingPage';
+import Navbar from './components/Navbar';
+import { Routes, Route} from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Signup/>
-      <Footer/>
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<LandingPage/>}/>
+        </Routes>
     </div>
   );
 }
