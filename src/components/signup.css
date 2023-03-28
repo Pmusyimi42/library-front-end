@@ -1,0 +1,85 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(22, 94%, 74%);
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+.form-box {
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px, 60px, 70px;
+    text-align: center;
+    border-radius: 30px;
+    height: 70%;
+}
+.form-box h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #ff6302;
+    position: relative;
+}
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #f5c114;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.input-field {
+    background: #fffefe;
+    margin: 15px 0;
+    border-radius: 3px;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+label {
+    margin-right: 70%;
+    font-weight: 400;
+}
+input {
+    width: 90%;
+    height: 50px;
+    background-color: #eaeaea;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    padding: 10px, 15px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+form p {
+    text-align: left;
+    font-size: 15px;
+    margin-left: 43px;
+}
+form p a {
+    text-decoration: none;
+    color: red;
+}
+.btn-field {
+    margin-top: 30px;
+}
+.btn-field button {
+    flex-basis: 48%;
+    background: #fda085;
+    color: #fff;
+    height: 40px;
+    width: 45%;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.btn-field button:hover {
+    background-color: #8EC5FC;
+}
