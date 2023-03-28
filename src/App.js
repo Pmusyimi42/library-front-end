@@ -1,4 +1,5 @@
 import './App.css';
+
 import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
 import { Routes, Route} from "react-router-dom"
