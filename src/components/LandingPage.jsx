@@ -14,8 +14,12 @@ export default function LandingPage() {
         <div className="landing-details">
           <img src="https://www.apple.com/newsroom/images/product/apple-books/apple-books_reading-now_06122018_big.jpg.large.jpg"/>
           <br/>
-            <button type='button' href="#">Sign UP</button>
-            <button type='button' href="#">Log In</button>
+          <button>
+            <Link type='button' to="/signup">Sign UP</Link>
+          </button>
+          <button>
+            <Link type='button' to="/login">Log In</Link>
+          </button>
       </div>
       </div>
     </div>
