@@ -7,33 +7,32 @@ import './footer.css'
 const Footer = () => {
   return (
     <footer>
-    <div className="container footer__container">
-        <article>
-            <a to='/' className='logo'>
+    <div className="footer__container">
+        <ul>
+            <li to='/' className='logo'>
                 <h4>Wordline</h4>
-            </a>
+            </li>
             <div className="footer__socials">
-                <a href="https://facebook.com" target="_blank" rel='noreferrer noopener'>
+                <li href="https://facebook.com" target="_blank" rel='noreferrer noopener'>
                      <BsFacebook/>
-                </a>
-                <a href="https://twitter.com" target="_blank" rel='noreferrer noopener'>
+                </li>
+                <li href="https://twitter.com" target="_blank" rel='noreferrer noopener'>
                      <BsTwitter/>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel='noreferrer noopener'>
+                </li>
+                <li href="https://instagram.com" target="_blank" rel='noreferrer noopener'>
                      <BsInstagram/>
-                </a>
+                </li>
             </div>
-        </article>
-        <article>
-            <h4></h4>
-            <a to='#home'>Home</a>
-            <a to='#about'>About us</a>
-            <a to='#contanct'>Contact us</a>
-        </article>
-        <article>
+        
+            {/* <h4></h4> */}
+            <li to='#home'>Home</li>
+            <li to='#about'>About us</li>
+            <li to='#contanct'>Contact us</li>
+        </ul>
+        {/* <ul>
             <h4>💫 Welcome to Wordline 💫</h4>
             <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, quaerat.</h4>
-        </article>
+        </ul> */}
     </div>
     <div className="footer__copyright">
         <small>

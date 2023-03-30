@@ -1,14 +1,16 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function ShowBooks1() {
   return (
-  <div className='container col-2xs lg:w-2/3 '>
+  <div className='col '>
+    <Navbar/>
   <div className="card mb-3 w-75 p-3"  >
   <div className="row align-items-start">
     <div className="col text align-center">
       <img src="https://textbookcentre.com/media/products/Scan_20200103_9.jpg" className="h-100 lg:w-65 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" alt="Book Cover"/>
     </div>
-    <div className="col mb-8">
+    <div className="col">
       <div className="card-body">
         <h5 className="card-title">Book Title</h5>
         <p className="card-text">Book Description</p>
@@ -18,7 +20,7 @@ function ShowBooks1() {
 
               Submit
             </button>
-            <div className='colmb-4'>
+            <div className='col'>
              <h1 className='text-3xl f0nt-bold mb-2 py-4'>Reviews</h1> 
              <div className="card text-dark bg-light mb-3" style={{maxWidth: "18rem;"}}>
                 <div className="card-header">Username</div>
