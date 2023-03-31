@@ -9,13 +9,13 @@ export default function Card() {
     .then ((data)=>(setBooks(data))
      )
   ),[]) 
-  
+
   return (
     <div>
         {books.map((book)=>{
           return (
             <div className="card" style={{width: "18rem"}}>
-        <img src={book.cover} className="card-img-top" alt="..."/>
+        <img src={book.cover} className="card-img-top" alt="Book Cover"/>
         <div className="card-body">
             <h5 className="card-title">{book.name}</h5>
             <small>{book.author.name}</small>
