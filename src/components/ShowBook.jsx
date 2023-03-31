@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function ShowBooks1() {
+function ShowBooks() {
+  const [showBook, setShowBook] =useState([])
+
+
   return (
   <div className='container col-2xs lg:w-2/3 '>
   <div className="card mb-3 w-75 p-3"  >
@@ -43,4 +46,4 @@ function ShowBooks1() {
   )
 }
 
-export default ShowBooks1
+export default ShowBooks

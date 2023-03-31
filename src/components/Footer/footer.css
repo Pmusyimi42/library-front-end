@@ -6,15 +6,13 @@
 
 
 footer {
-    background: rgb(255, 255, 255);
+    background: rgb(193, 143, 240);
     font-size: 0.9rem;
     color: var(--color-gray-100);
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .footer__container {
-    background: white;
+    background: blueviolet;
     display: grid;
     grid-template-columns: 26rem 1fr 1fr 1fr;
     gap: 6rem;

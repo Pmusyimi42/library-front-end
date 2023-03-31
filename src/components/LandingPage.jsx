@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Landingpage.css'
+import Navbar from './Navbar'
 
 export default function LandingPage() {
   return (
+    <>
     <div className='Landing-container'>
       <div className="landing__container">
         <div className="headings">
@@ -23,5 +25,6 @@ export default function LandingPage() {
       </div>
       </div>
     </div>
+    </>
   )
 }
