@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Card() {
+  const [books, setBooks] = useState([])
+  useEffect((
+    fetch('http://127.0.0.1:3000/books')
+    .then ((response)=>response.json())
+    .then ((data)=>(setBooks(data))
+     )
+  ),[]) 
+
   return (
     <div>
-        <div className="card" style={{width: "18rem"}}>
-        <img src="https://nuriakenya.com/wp-content/uploads/2022/03/Ugly-Love-nuriakenya.jpg" className="card-img-top" alt="..."/>
+        {books.map((book)=>{
+          return (
+            <div className="card" style={{width: "18rem"}}>
+        <img src={book.cover} className="card-img-top" alt="Book Cover"/>
         <div className="card-body">
-            <h5 className="card-title">Ugly Love</h5>
-            <small>Colleen Hoover</small>
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+            <h5 className="card-title">{book.name}</h5>
+            <small>{book.author.name}</small>
+            <p className="card-text">{book.description}</p>
+            <Link to= "/book">Read more</Link>
+         </div>
 </div>
+          )
+        })}
     </div>
   )
 }

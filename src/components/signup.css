@@ -1,17 +1,17 @@
-.container {
+/* .container {
     width: 100%;
     height: 100vh;
     background-color: hsl(22, 94%, 74%);
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-}
+} */
 .form-box {
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: violet;
     padding: 20px, 60px, 70px;
     text-align: center;
     border-radius: 30px;
@@ -45,11 +45,12 @@
 label {
     margin-right: 70%;
     font-weight: 400;
+    font-size: 1.2rem;
 }
 input {
     width: 90%;
     height: 50px;
-    background-color: #eaeaea;
+    background-color: #eedbdb;
     border: 0;
     border-radius: 10px;
     outline: 0;
@@ -82,4 +83,14 @@ form p a {
 }
 .btn-field button:hover {
     background-color: #8EC5FC;
+}
+.form-container {
+    background-color: #61dafb;
+}
+.error {
+    color: red;
+    
+}
+.for-background {
+    background-color: #f5c114;
 }

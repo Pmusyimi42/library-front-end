@@ -15,10 +15,10 @@ export default function LandingPage() {
           <img src="https://media.istockphoto.com/id/943117712/vector/online-library-and-knowledge.jpg?s=612x612&w=0&k=20&c=YuTuZLTAqtxkEHTRBqKTbSG4ss8VU-2mXRrx5dK7z3s=" alt=''/>
           <br/>
           <button>
-            <Link type='button' to="/signup">Sign UP</Link>
+            <Link type='button' to="/signup">SignUp</Link>
           </button>
           <button>
-            <Link type='button' to="/login">Log In</Link>
+            <Link type='button' to="/login">LogIn</Link>
           </button>
         </div>
       </div>

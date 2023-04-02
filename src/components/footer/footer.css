@@ -6,33 +6,37 @@
 
 
 footer {
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
+    background-color: aqua;
     font-size: 0.9rem;
     color: var(--color-gray-100);
     margin-left: 10px;
     margin-right: 10px;
+    position: fixed;
 }
 
-.footer__container {
+/* .footer__container {
     background: white;
     display: grid;
     grid-template-columns: 26rem 1fr 1fr 1fr;
     gap: 6rem;
     height: 150px;
-}
+} */
 
-.footer__container article {
-    display: flex;
+.footer__container ul {
+    /* display: flex; */
     flex-direction: column;
     align-items: flex-start;
     gap: 0.7rem;
+    text-align: center;
+    display: inline-flex;
 }
 
-.footer__container article p {
+.footer__container ul p {
     margin-top: 0.2rem;
 }
 
-.footer__container article h4 {
+.footer__container ul h4 {
     margin-bottom: 0.6rem;
     font-size: 1rem;
 }

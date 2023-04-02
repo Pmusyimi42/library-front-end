@@ -1,46 +1,60 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
+import Review from './Review';
 
-function ShowBooks1() {
+function ShowBook() {
+  const [books, setBooks] = useState([]);
+  const [myBook, setMyBook] = useState([]);
+  const navigate = useNavigate
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const response = await fetch(`/books/${id}`);
+      const data = await response.json();
+      setBooks(data);
+    };
+
+    fetchBooks();
+  }, []);
+
+  function handleClick (id) {
+    const book = books.find(book => book.id === id)
+     
+    if  (book) {
+      navigate('/book')
+    }else {
+      alert ("Book not found")
+    }
+  }
+
   return (
-  <div className='container col-2xs lg:w-2/3 '>
-  <div className="card mb-3 w-75 p-3"  >
-  <div className="row align-items-start">
-    <div className="col text align-center">
-      <img src="https://textbookcentre.com/media/products/Scan_20200103_9.jpg" className="h-100 lg:w-65 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" alt="Book Cover"/>
-    </div>
-    <div className="col mb-8">
-      <div className="card-body">
-        <h5 className="card-title">Book Title</h5>
-        <p className="card-text">Book Description</p>
-        <p className='card-author'><small>Author</small></p>
-        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="review" type="text" placeholder="Give your review"/>
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-
-              Submit
-            </button>
-            <div className='colmb-4'>
-             <h1 className='text-3xl f0nt-bold mb-2 py-4'>Reviews</h1> 
-             <div className="card text-dark bg-light mb-3" style={{maxWidth: "18rem;"}}>
-                <div className="card-header">Username</div>
-                <div className="card-body">
-                  {/* <h5 className="card-title">Light card title</h5> */}
-                  <p className="card-text">User review.</p>
-                  <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ">
-                   Update
-                  </button>
-                  <br/>
-                  <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    Delete
-                  </button>
+    <div id="book">
+      <Navbar />
+      {
+        books.map((book) => {
+          return (
+            <div key={book.id} id="bookCard" className="card p-5" onClick={handleClick}>
+            <div id="viewBook" className="card mb-3" style={{ maxWidth: '540px' }}>
+              <div className="row">
+                <div className="col-md-5">
+                  <img id="img" src={book.cover} className="img-fluid rounded-start" alt="..." />
+                  <div id="cardDetail" className="col-md-7">
+                    <div className="card-body">
+                      <h4 className="card-title">Title: {book.title}</h4>
+                      <p className="card-text">Author: {book.author}</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-           </div>
-      </div>
+          </div>
+          )
+        })
+      }
+      <Review />
     </div>
-  </div>
-  </div>
-</div>
-  )
+  );
 }
 
-export default ShowBooks1
+export default ShowBook
