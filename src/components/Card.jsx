@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
@@ -69,6 +70,7 @@ export default function Card() {
           </div>
         </div>
       ))}
+
     </div>
   );
 }

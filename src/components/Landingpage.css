@@ -13,6 +13,7 @@
     place-items: center;
     gap: 5rem;
     width: 90%;
+    margin-top: 60px;
 }
 .headings {
     margin-left: 0;
@@ -40,7 +41,7 @@
 .landing-details img {
     height: 400px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 100px;
 }
 .landing-details {
     margin-right: 100px;

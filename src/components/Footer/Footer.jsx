@@ -7,7 +7,7 @@ import './footer.css'
 const Footer = () => {
   return (
     <footer>
-    <div className="container footer__container">
+    {/* <div className="cfooter__container">
         <article>
             <a to='/' className='logo'>
                 <h4>Wordline</h4>
@@ -34,7 +34,7 @@ const Footer = () => {
             <h4>💫 Welcome to Wordline 💫</h4>
             <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, quaerat.</h4>
         </article>
-    </div>
+    </div> */}
     <div className="footer__copyright">
         <small>
             2023 WORDLINE &copy; copyright ©  all rights reserved
