@@ -1,73 +1,71 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Review() {
-  const [review, setReview] = useState("");
-
+  const [reviews, setReviews] = useState([]);
+  
   useEffect(() => {
-    fetch(
-      'http://127.0.0.1:3000/reviews'
-    )
-      .then((r) => r.json())
-      .then((data) => {
-        // {setReview(review)} 
-        setReview
-        
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    fetch('http://127.0.0.1:3000/reviews')
+      .then((response) => response.json())
+      .then((data) => setReviews(data))
+      .catch((error) => console.error(error));
+  }, [])
 
-  function handleSubmit(e) {
+  function handleSubmit(e, id) {
     e.preventDefault();
-  fetch(
-    `http://127.0.0.1:3000/reviews/${id}`,
-    {
+    const reviewToUpdate = reviews.find(review => review.id === id)
+    fetch(`http://127.0.0.1:3000/reviews/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        review,
+        comment: reviewToUpdate.comment,
       }),
-    }
-  )
-    .then((response) => response.json())
-    .then((data) => review(data)
-      
-      // document.location.reload();
-    )
-    .catch((error) => {
-      console.error(error);
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => setReviews(data))
+      .catch((error) => console.error(error));
   }
+
   return (
-    <div className='col'>
-               <h1 className='text-3xl f0nt-bold mb-2 py-4'>Reviews</h1> 
-               <div className="card text-dark bg-light mb-3" style={{maxWidth: "18rem;"}}>
-                  <div className="card-header">Username</div>
-                  <div className="card-body">
-                    {/* <h5 className="card-title">Light card title</h5> */}
-                    <p className="card-text">User review.</p>
+    <>
+    {
+        reviews.map((review) => {
+            return (
+                <div className='col' key={review.id}>
+                <h1 className='text-3xl font-bold mb-2 py-4'>Reviews</h1> 
+                <div className="card text-dark bg-light mb-3" style={{ maxWidth: "18rem" }}>
+                <div className="card-header">{review.user.username}</div>
+                <div className="card-body">
+                    <p className="card-text">{review.comment}</p>
                     <input
-                      className="form-control"
-                      name="review"
-                      value={review}
-                      placeholder="Type Here"
-                      onChange={(e) => setReview(e.target.value)}
+                    className="form-control"
+                    name="review"
+                    value={review.comment}
+                    placeholder="Type Here"
+                    onChange={(e) => {
+                      const newReviews = [...reviews]
+                      const index = newReviews.findIndex(x => x.id === review.id)
+                      newReviews[index].comment = e.target.value
+                      setReviews(newReviews)
+                    }}
                     />
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded " onClick={handleSubmit}>
-                     Update
+                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded " onClick={(e) => handleSubmit(e, review.id)}>
+                    Update
                     </button>
-                    <br/>
+                    <br />
                     <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                      Delete
+                    Delete
                     </button>
-                  </div>
-              </div>
-             </div>
+                </div>
+                </div>
+            </div>
+        )
+        })
+      }
+    </>
+
   )
 }
 
-export default Review
+export default Review;
