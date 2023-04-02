@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import './signup.css';
@@ -24,7 +23,7 @@ export default function Signup() {
         password: formData.password,
       }
     try {
-      const response = await fetch('/signup', {
+      const response = await fetch('http://127.0.0.1:3000/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user }),
@@ -33,10 +32,9 @@ export default function Signup() {
       if (response.ok) {
         navigate('/login');
       } else {
-        alert(data.error);
+        setError(data.error);
       }
     } catch (error) {
-      console.error(error);
       setError(error.message);
     }
   };
