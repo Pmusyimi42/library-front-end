@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 function Review() {
@@ -14,11 +15,13 @@ function Review() {
     e.preventDefault();
     const reviewToUpdate = reviews.find(review => review.id === id)
     fetch(`http://127.0.0.1:3000/reviews/${id}`, {
+
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+
         comment: reviewToUpdate.comment,
       }),
     })
@@ -69,3 +72,4 @@ function Review() {
 }
 
 export default Review;
+
