@@ -34,6 +34,7 @@ function Login() {
       alert('You are logged in')
     } else {
       setError(data.error);
+      alert('Something went wrong')
     }
   };
   
