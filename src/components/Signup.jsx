@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import './signup.css';
@@ -90,6 +91,7 @@ export default function Signup() {
             </div>
             <div className="btn-field">
               <button type="submit">Submit</button>
+
             </div>
           </form>
           {error && <div className='error'>{error}</div>}
