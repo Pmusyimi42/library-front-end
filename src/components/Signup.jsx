@@ -23,18 +23,16 @@ export default function Signup() {
         password: formData.password,
       }
     try {
-      const response = await fetch('http://127.0.0.1:3000/signup', {
+      const response = await fetch('/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user }),
       });
       const data = await response.json();
       if (response.ok) {
-        const { id } = data.user;
-        sessionStorage.setItem('user_id', id);
         navigate('/login');
       } else {
-        throw new Error(data.error);
+        alert(data.error);
       }
     } catch (error) {
       console.error(error);
@@ -44,8 +42,11 @@ export default function Signup() {
 
   return (
     <>
-      <Navbar />
-      <div className="form-container">
+    <div>
+    <Navbar />
+    </div>
+    <div className="form-backgroud">
+    <div className="form-container">
         <div className="form-box">
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
@@ -64,7 +65,7 @@ export default function Signup() {
             </div>
             <div className="mb-3" style={{ width: '80%', marginLeft: '30px' }}>
               <label htmlFor="exampleInputEmail1" className="form-label">
-                Email address
+                Email
               </label>
               <input
                 type="email"
@@ -87,10 +88,14 @@ export default function Signup() {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit">Submit</button>
+            <div className="btn-field">
+              <button type="submit">Submit</button>
+            </div>
           </form>
+          {error && <div className='error'>{error}</div>}
         </div>
       </div>
+    </div>
     </>
   );
 }
