@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Review({ review }) {
   const [comment, setComment] = useState(review.comment);
+  // cont [reviews, setReviews] = useState([])
+
+  // useEffect((
+  //   fetch('http://127.0.0.1:3000/reviews/${review.id}')
+  //   .then((response) => response.json())
+  //   .then((data) => setReviews(data))
+  // ), [])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,7 +39,7 @@ function Review({ review }) {
   return (
     <li className='list-group-item'>
       <div className='d-flex justify-content-between'>
-        <h5>{review.user.username}</h5>
+        <h5>{review.user ? review.user.username : 'Unknown user'}</h5>
         <button
           className='btn btn-outline-danger btn-sm'
           onClick={handleDelete}
@@ -51,7 +58,7 @@ function Review({ review }) {
             onChange={(e) => setComment(e.target.value)}
           />
         </div>
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' className='btn btn-primary' onClick={handleSubmit}>
           Update
         </button>
       </form>
