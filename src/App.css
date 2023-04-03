@@ -36,3 +36,100 @@
     transform: rotate(360deg);
   }
 }
+nav {
+  background-color: rgb(189, 172, 118);
+  width: 100vw;
+  height: 5rem;
+  z-index: 11;
+  /* margin-top: 5px; */
+ }
+ 
+ 
+ /* change navbar styles on scroll using javascript */
+ .window-scroll {
+  background: var(--color-primary);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+ }
+ 
+ 
+ .nav__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-bg2);
+  padding: 10px;
+ }
+ .nav__container h4 {
+  font-size: 2rem;
+  font-weight: 500;
+ }
+
+ .nav__container h4:hover {
+  color: orange;
+ }
+ 
+ nav button {
+  display: none;
+ }
+ 
+ 
+ .nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 10px;
+  font-size: 1.2rem;
+ }
+ 
+ 
+ .nav__menu a {
+  font-size: 0.9rem;
+  transition: var(--trasition);
+ }
+ 
+ 
+ .nav__menu a:hover {
+  color: orange;
+ }
+ .card-container {
+  width: 100%;
+  padding: 15px;
+  margin-top: 0 auto;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+  box-sizing: border-box;
+ }
+ .cards {
+  background-color: rgb(179, 114, 229);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 5px rgba(121, 119, 119, 0);
+  text-align: center;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+ }
+ .cards img {
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem 1rem 0 0;
+ }
+ .cards:hover {
+  transform: scale(0.9);
+  background-color: burlywood;
+ }
+ .card-body {
+  padding: 5px;
+  margin-top: 2px;
+  color: rgb(0, 0, 0);
+ }
+ .span {
+   background-color: rgb(207, 166, 237);
+   border-radius: 3rem;
+   border-radius: 0 5px 5px 0 rgba(0 0 0);
+   margin-top: 5px;
+ }
