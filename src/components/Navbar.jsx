@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const isLoggedIn = !!sessionStorage.getItem('user_id'); // check if user is logged in
-  console.log(isLoggedIn);
+  const isLoggedIn = !!sessionStorage.getItem('user_id');
 
   const handleLogout = () => {
     sessionStorage.removeItem('user_id');
+    navigate('/login');
+  };
+
+  const handleLogin = () => {
     navigate('/login');
   };
 
@@ -19,18 +22,24 @@ export default function Navbar() {
             <h4>WORDLINE</h4>
           </a>
           <ul className="nav__menu">
-            {isLoggedIn && ( // render Home link only if user is logged in
+            {isLoggedIn ? (
               <li>
                 <a href="/home">Home</a>
               </li>
-            )}
+            ) : null}
             <li>
               <a href="/about">About</a>
             </li>
             <li>
-              <button className="btn btn-primary" onClick={handleLogout}>
-                LogOut
-              </button>
+              {isLoggedIn ? (
+                <button className="btn btn-primary" onClick={handleLogout}>
+                  Logout
+                </button>
+              ) : (
+                <button className="btn btn-primary" onClick={handleLogin}>
+                  Login
+                </button>
+              )}
             </li>
           </ul>
         </div>
