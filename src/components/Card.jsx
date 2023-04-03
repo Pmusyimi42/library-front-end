@@ -9,7 +9,7 @@ export default function Card() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:3000/books');
+        const res = await fetch('https://library1-dv9h.onrender.com/books');
         const data = await res.json();
         setBooks(data);
       } catch (error) {

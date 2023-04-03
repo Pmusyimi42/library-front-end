@@ -5,7 +5,7 @@ function Review({ review }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`http://127.0.0.1:3000/reviews/${review.id}`, {
+    fetch(`https://library1-dv9h.onrender.com/reviews/${review.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ function Review({ review }) {
   }
 
   function handleDelete() {
-    fetch(`http://127.0.0.1:3000/reviews/${review.id}`, {
+    fetch(`https://library1-dv9h.onrender.com/reviews/${review.id}`, {
       method: 'DELETE',
     })
       .then(() => {

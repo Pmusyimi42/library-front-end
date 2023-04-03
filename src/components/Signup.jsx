@@ -23,7 +23,7 @@ export default function Signup() {
         password: formData.password,
       }
     try {
-      const response = await fetch('http://127.0.0.1:3000/signup', {
+      const response = await fetch('https://library1-dv9h.onrender.com/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user }),
