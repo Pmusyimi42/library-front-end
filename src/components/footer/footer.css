@@ -7,21 +7,21 @@
 
 footer {
     /* background: rgb(255, 255, 255); */
-    background-color: aqua;
+    background-color: rgb(162, 131, 57);
     font-size: 0.9rem;
     color: var(--color-gray-100);
     margin-left: 10px;
     margin-right: 10px;
-    position: fixed;
+    margin-top: 50px;
 }
 
-/* .footer__container {
+.footer__container {
     background: white;
     display: grid;
     grid-template-columns: 26rem 1fr 1fr 1fr;
     gap: 6rem;
     height: 150px;
-} */
+}
 
 .footer__container ul {
     /* display: flex; */
