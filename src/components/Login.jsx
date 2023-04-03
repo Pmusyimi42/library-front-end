@@ -30,6 +30,7 @@ function Login() {
     });
     const data = await response.json();
     if (response.ok) {
+      sessionStorage.setItem('user_id', data.user_id);
       navigate('/home')
       alert('You are logged in')
     } else {
