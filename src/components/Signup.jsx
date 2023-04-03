@@ -13,7 +13,7 @@ export default function Signup() {
     const value = e.target.value;
     setFormData({ ...formData, [key]: value });
   }
-  console.log(formData);
+  // console.log(formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
