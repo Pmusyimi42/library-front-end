@@ -12,7 +12,8 @@ function ShowBook() {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/books/${id}`);
+        const res = await fetch(`https://library1-dv9h.onrender.com/books/${id}`);
+
         const data = await res.json();
         setBook(data);
       } catch (error) {
