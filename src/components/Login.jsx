@@ -14,7 +14,7 @@ function Login() {
     const value = e.target.value
     setFormData({ ...formData, [key]: value })
   }
-  console.log(formData);
+  // console.log(formData);
 
   const handleLogin = async (e) => {
     e.preventDefault();
